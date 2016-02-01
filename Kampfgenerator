@@ -1,0 +1,649 @@
+import java.awt.Color;
+import java.awt.EventQueue;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JCheckBox;
+import java.awt.BorderLayout;
+
+public class Kampfgenerator {
+
+	private JFrame frame;
+	
+	
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Kampfgenerator window = new Kampfgenerator();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public Kampfgenerator() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+				
+		String[] strLabelNameName = {"txtName1","txtName2","txtName3","txtName4","txtName5","txtName6","txtName7","txtName8","txtName9","txtName10","txtName11",
+				"txtName","txtName13","txtName14","txtName15","txtName16","txtName17","txtName18","txtName19","txtName20","txtName21","txtName22"};
+		JTextField[] strInputName = new JTextField[22]; 
+		
+		String[] strLabelNameVW = {"txtVW1","txtVW2","txtVW3","txtVW4","txtVW5","txtVW6","txtVW7","txtVW8","txtVW9","txtVW10","txtVW11",
+				"txtVW","txtVW13","txtVW14","txtVW15","txtVW16","txtVW17","txtVW18","txtVW19","txtVW20","txtVW21","txtVW22"};
+		JTextField[] strInputVW = new JTextField[22]; 
+		
+		String[] strLabelNameSR = {"txtSR1","txtSR2","txtSR3","txtSR4","txtSR5","txtSR6","txtSR7","txtSR8","txtSR9","txtSR10","txtSR11",
+				"txtSR","txtSR13","txtSR14","txtSR15","txtSR16","txtSR17","txtSR18","txtSR19","txtSR20","txtSR21","txtSR22"};
+		JTextField[] strInputSR = new JTextField[22]; 
+		
+		String[] strLabelNameGW = {"txtGW1","txtGW2","txtGW3","txtGW4","txtGW5","txtGW6","txtGW7","txtGW8","txtGW9","txtGW10","txtGW11",
+				"txtGW","txtGW13","txtGW14","txtGW15","txtGW16","txtGW17","txtGW18","txtGW19","txtGW20","txtGW21","txtGW22"};
+		JTextField[] strInputGW = new JTextField[22]; 
+			
+		String[] strLabelNameLP = {"txtLP1","txtLP2","txtLP3","txtLP4","txtLP5","txtLP6","txtLP7","txtLP8","txtLP9","txtLP10","txtLP11",
+				"txtLP","txtLP13","txtLP14","txtLP15","txtLP16","txtLP17","txtLP18","txtLP19","txtLP20","txtLP21","txtLP22"};
+		JTextField[] strInputLP = new JTextField[22]; 
+		
+		String[] strLabelNameRS = {"txtRS1","txtRS2","txtRS3","txtRS4","txtRS5","txtRS6","txtRS7","txtRS8","txtRS9","txtRS10","txtRS11",
+				"txtRS","txtRS13","txtRS14","txtRS15","txtRS16","txtRS17","txtRS18","txtRS19","txtRS20","txtRS21","txtRS22"};
+		JTextField[] strInputRS = new JTextField[22]; 
+		
+		String[] strLabelNameInitiative = {"txtInitiative1","txtInitiative2","txtInitiative3","txtInitiative4","txtInitiative5","txtInitiative6","txtInitiative7","txtInitiative8","txtInitiative9","txtInitiative10","txtInitiative11",
+				"txtInitiative","txtInitiative13","txtInitiative14","txtInitiative15","txtInitiative16","txtInitiative17","txtInitiative18","txtInitiative19","txtInitiative20","txtInitiative21","txtInitiative22"};
+		JTextField[] strInputInitiative = new JTextField[22]; 
+		
+		String[] strLabelNameAngriff = {"txtAngriff1","txtAngriff2","txtAngriff3","txtAngriff4","txtAngriff5","txtAngriff6","txtAngriff7","txtAngriff8","txtAngriff9","txtAngriff10","txtAngriff11",
+				"txtAngriff","txtAngriff13","txtAngriff14","txtAngriff15","txtAngriff16","txtAngriff17","txtAngriff18","txtAngriff19","txtAngriff20","txtAngriff21","txtAngriff22"};
+		JTextField[] strInputAngriff = new JTextField[22]; 
+		
+		String[] strLabelNameSchaden = {"txtSchaden1","txtSchaden2","txtSchaden3","txtSchaden4","txtSchaden5","txtSchaden6","txtSchaden7","txtSchaden8","txtSchaden9","txtSchaden10","txtSchaden11",
+				"txtSchaden","txtSchaden13","txtSchaden14","txtSchaden15","txtSchaden16","txtSchaden17","txtSchaden18","txtSchaden19","txtSchaden20","txtSchaden21","txtSchaden22"};
+		JTextField[] strInputSchaden = new JTextField[22]; 
+		
+		String[] strLabelNameSCDMG = {"txtSCDMG1","txtSCDMG2","txtSCDMG3","txtSCDMG4","txtSCDMG5","txtSCDMG6","txtSCDMG7","txtSCDMG8","txtSCDMG9","txtSCDMG10","txtSCDMG11",
+				"txtSCDMG","txtSCDMG13","txtSCDMG14","txtSCDMG15","txtSCDMG16","txtSCDMG17","txtSCDMG18","txtSCDMG19","txtSCDMG20","txtSCDMG21","txtSCDMG22"};
+		JTextField[] strInputSCDMG = new JTextField[22]; 
+		
+		String[] strLabelNameLPa = {"txtLPa1","txtLPa2","txtLPa3","txtLPa4","txtLPa5","txtLPa6","txtLPa7","txtLPa8","txtLPa9","txtLPa10","txtLPa11",
+				"txtLPa","txtLPa13","txtLPa14","txtLPa15","txtLPa16","txtLPa17","txtLPa18","txtLPa19","txtLPa20","txtLPa21","txtLPa22"};
+		JLabel[] strInputLPa = new JLabel[22]; 
+		
+		String[] strLabelNameZustand = {"txtZustand1","txtZustand2","txtZustand3","txtZustand4","txtZustand5","txtZustand6","txtZustand7","txtZustand8","txtZustand9","txtZustand10","txtZustand11",
+				"txtZustand","txtZustand13","txtZustand14","txtZustand15","txtZustand16","txtZustand17","txtZustand18","txtZustand19","txtZustand20","txtZustand21","txtZustand22"};
+		JLabel[] strInputZustand = new JLabel[22]; 
+		
+		String[] strLabelNameWurf = {"txtWurf1","txtWurf2","txtWurf3","txtWurf4","txtWurf5","txtWurf6","txtWurf7","txtWurf8","txtWurf9","txtWurf10","txtWurf11","txtWurf12","txtWurf13","txtWurf14","txtWurf15","txtWurf16","txtWurf17",
+				"txtWurf18","txtWurf19","txtWurf20","txtWurf21","txtWurf22"};
+		JLabel[] strInputWurf = new JLabel[22]; 
+		
+		String[] strLabelNameInvis = {"txtInvis1","txtInvis2","txtInvis3","txtInvis4","txtInvis5","txtInvis6","txtInvis7","txtInvis8","txtInvis9","txtInvis10","txtInvis11",
+				"txtInvis","txtInvis13","txtInvis14","txtInvis15","txtInvis16","txtInvis17","txtInvis18","txtInvis19","txtInvis20","txtInvis21","txtInvis22"};
+		
+		JCheckBox[] checkBoxes = new JCheckBox[22];
+		
+		int i,a;
+		
+		
+		frame = new JFrame();
+		frame.setBounds(100, 100, 1000, 800);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+	
+		JLabel lblGegner = new JLabel("Gegner");
+		lblGegner.setBounds(10, 11, 40, 14);
+		frame.getContentPane().add(lblGegner);
+		
+		JLabel lblVw = new JLabel("VW");
+		lblVw.setBounds(67, 11, 40, 14);
+		frame.getContentPane().add(lblVw);
+		
+		JLabel lblSr = new JLabel("SR");
+		lblSr.setBounds(124, 11, 40, 14);
+		frame.getContentPane().add(lblSr);
+		
+		JLabel lblGw = new JLabel("GW");
+		lblGw.setBounds(181, 11, 40, 14);
+		frame.getContentPane().add(lblGw);
+		
+		JLabel lblRs = new JLabel("RS");
+		lblRs.setBounds(295, 11, 40, 14);
+		frame.getContentPane().add(lblRs);
+		
+		JLabel lblInitiative = new JLabel("Initiative");
+		lblInitiative.setBounds(352, 11, 40, 14);
+		frame.getContentPane().add(lblInitiative);
+		
+		JLabel lblAngriff = new JLabel("Angriff");
+		lblAngriff.setBounds(409, 11, 40, 14);
+		frame.getContentPane().add(lblAngriff);
+		
+		JLabel lblSchaden = new JLabel("Schaden");
+		lblSchaden.setBounds(466, 11, 40, 14);
+		frame.getContentPane().add(lblSchaden);
+		
+		JLabel lblScdmg = new JLabel("SCDMG");
+		lblScdmg.setBounds(523, 11, 40, 14);
+		frame.getContentPane().add(lblScdmg);
+		
+		JLabel lblLp = new JLabel("LP");
+		lblLp.setBounds(238, 11, 40, 14);
+		frame.getContentPane().add(lblLp);
+		
+		JLabel lblLpaktuell = new JLabel("LPaktuell");
+		lblLpaktuell.setBounds(580, 11, 40, 14);
+		frame.getContentPane().add(lblLpaktuell);
+		
+		JLabel lblZustand = new JLabel("Zustand");
+		lblZustand.setBounds(637, 11, 80, 14);
+		frame.getContentPane().add(lblZustand);
+		
+		JLabel lblWurf = new JLabel("Wurf");
+		lblWurf.setBounds(734, 11, 40, 14);
+		frame.getContentPane().add(lblWurf);
+		
+		JLabel lblInvis = new JLabel("Invis");
+		lblInvis.setBounds(791, 11, 40, 14);
+		frame.getContentPane().add(lblInvis);
+		
+		a=41;
+		for(i=0;i<22;i++){
+		
+		strInputName[i] =  new JTextField(strLabelNameName[i]);
+		strInputName[i].setText("Name");
+		strInputName[i].setBounds(10, a, 40, 20);
+		frame.getContentPane().add(strInputName[i]);
+		strInputName[i].setColumns(10);
+		
+		strInputVW[i] =  new JTextField(strLabelNameVW[i]);
+		strInputVW[i].setText("14");
+		strInputVW[i].setBounds(67, a, 40, 20);
+		frame.getContentPane().add(strInputVW[i]);
+		strInputVW[i].setColumns(10);
+		
+		strInputSR[i] =  new JTextField(strLabelNameSR[i]);
+		strInputSR[i].setText("14");
+		strInputSR[i].setBounds(124, a, 40, 20);
+		frame.getContentPane().add(strInputSR[i]);
+		strInputSR[i].setColumns(10);
+		
+		strInputGW[i] =  new JTextField(strLabelNameGW[i]);
+		strInputGW[i].setText("14");
+		strInputGW[i].setBounds(181, a, 40, 20);
+		frame.getContentPane().add(strInputGW[i]);
+		strInputGW[i].setColumns(10);
+		
+		strInputLP[i] =  new JTextField(strLabelNameLP[i]);
+		strInputLP[i].setText("30");
+		strInputLP[i].setBounds(238, a, 40, 20);
+		frame.getContentPane().add(strInputLP[i]);
+		strInputLP[i].setColumns(10);
+		
+		strInputRS[i] =  new JTextField(strLabelNameRS[i]);
+		strInputRS[i].setText("0");
+		strInputRS[i].setBounds(295, a, 40, 20);
+		frame.getContentPane().add(strInputRS[i]);
+		strInputRS[i].setColumns(10);
+		
+		strInputInitiative[i] =  new JTextField(strLabelNameInitiative[i]);
+		strInputInitiative[i].setText("0");
+		strInputInitiative[i].setBounds(352, a, 40, 20);
+		frame.getContentPane().add(strInputInitiative[i]);
+		strInputInitiative[i].setColumns(10);
+		
+		strInputAngriff[i] =  new JTextField(strLabelNameAngriff[i]);
+		strInputAngriff[i].setText("0");
+		strInputAngriff[i].setBounds(409, a, 40, 20);
+		frame.getContentPane().add(strInputAngriff[i]);
+		strInputAngriff[i].setColumns(10);
+		
+		strInputSchaden[i] =  new JTextField(strLabelNameSchaden[i]);
+		strInputSchaden[i].setText("1w10");
+		strInputSchaden[i].setBounds(466, a, 40, 20);
+		frame.getContentPane().add(strInputSchaden[i]);
+		strInputSchaden[i].setColumns(10);
+		
+		strInputSCDMG[i] =  new JTextField(strLabelNameSCDMG[i]);
+		strInputSCDMG[i].setText("0");
+		strInputSCDMG[i].setBounds(523, a, 40, 20);
+		frame.getContentPane().add(strInputSCDMG[i]);
+		strInputSCDMG[i].setColumns(10);
+		
+		strInputLPa[i] = new JLabel(strInputLP[i].getText());
+		strInputLPa[i].setBounds(580, a, 40, 14);
+		frame.getContentPane().add(strInputLPa[i]);
+		
+		strInputZustand[i] = new JLabel("Angeschlagen");
+		strInputZustand[i].setBounds(637, a, 80, 14);
+		frame.getContentPane().add(strInputZustand[i]);
+		
+		strInputWurf[i] = new JLabel("0");
+		strInputWurf[i].setBounds(734, a, 40, 14);
+		frame.getContentPane().add(strInputWurf[i]);
+		
+		//checkBoxes[i]= new checkBoxes(1);
+		checkBoxes[i] = new JCheckBox("");
+		checkBoxes[i].setBounds(791, a, 23, 14);
+		checkBoxes[i].setVisible(true);		
+		frame.getContentPane().add(checkBoxes[i]);
+				
+		a=a+31;
+		}
+		JButton btnInitiative = new JButton("Initiative");
+		btnInitiative.setToolTipText("<html>Würfelt die Initiative aus.<br>"
+				+ "Negative Werte sind möglich.<br>"
+				+ "Der Wundgrad beeinflusst den Wurf.<br>"
+				+ "2w10+Initiative-Verwundung<br>"
+				+ "Farbcode:<br>Rot=kritischer Fehlschlag<br>"
+				+ "Gelb=automatischer Fehlschlag<br>"
+				+ "Türkis=automatischer Treffer<br>"
+				+ "Grün=kritischer Treffer</html>");
+		btnInitiative.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				int wurfel1,wurfel2,i,Zustand,Ergebnis,Zwischen;
+				String stringer;
+				
+				Ergebnis=0;
+				Zwischen=0;
+				Zustand=0;
+				
+				for(i=0;i<22;i++){
+				
+				wurfel1 = (int)(Math.random() * 10) + 1;
+				wurfel2 = (int)(Math.random() * 10) + 1;
+				
+				if((wurfel1 == 1) && (wurfel2 == 1))
+				{
+					strInputWurf[i].setBackground(Color.red);
+					strInputWurf[i].setOpaque(true);
+				}
+				else if(((wurfel1 == 1) && (wurfel2 == 2)) || ((wurfel1 == 2) && (wurfel2 == 1)))
+				{
+					strInputWurf[i].setBackground(Color.yellow);
+					strInputWurf[i].setOpaque(true);
+				}
+				else if(((wurfel1 == 9) && (wurfel2 == 10)) || ((wurfel1 == 10) && (wurfel2 == 9)))
+				{
+					strInputWurf[i].setBackground(Color.cyan);
+					strInputWurf[i].setOpaque(true);
+				}
+				else if((wurfel1 == 10) && (wurfel2 == 10))
+				{
+					strInputWurf[i].setBackground(Color.green);
+					strInputWurf[i].setOpaque(true);
+				}
+				else
+				{
+					strInputWurf[i].setOpaque(false);
+				
+				}
+				
+				if(strInputZustand[i].getText().equals("Angeschlagen"))
+				{
+					Zustand = 0;
+				}
+				else if(strInputZustand[i].getText().equals("Verletzt"))
+				{
+					Zustand = -2;
+				}
+				else if(strInputZustand[i].getText().equals("Verwundet"))
+				{
+					Zustand = -4;
+				}
+				else if(strInputZustand[i].getText().equals("Schwer verwundet"))
+				{
+					Zustand = -6;
+				}
+				stringer = strInputInitiative[i].getText();
+				Zwischen = Integer.parseInt(stringer);
+				Ergebnis = wurfel1+wurfel2+Zwischen+Zustand;
+				strInputWurf[i].setText(Integer.toString(Ergebnis));
+			}}
+		});
+		btnInitiative.setBounds(885, 35, 89, 23);
+		frame.getContentPane().add(btnInitiative);
+		
+		JButton btnAngriff = new JButton("Angriff");
+		btnAngriff.setToolTipText("<html>Würfelt den Angriff aus.<br>"
+				+ "Negative Werte sind möglich.<br>"
+				+ "Der Wundgrad beeinflusst den Wurf.<br>"
+				+ "2w10+Angriff-Verwundung<br>"
+				+ "Farbcode:<br>Rot=kritischer Fehlschlag<br>"
+				+ "Gelb=automatischer Fehlschlag<br>"
+				+ "Türkis=automatischer Treffer<br>"
+				+ "Grün=kritischer Treffer</html>");
+		btnAngriff.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg1) {
+				int wurfel1,wurfel2,i,Zustand,Ergebnis,Zwischen;
+				String stringer;
+				
+				Ergebnis=0;
+				Zwischen=0;
+				Zustand=0;
+				
+				for(i=0;i<22;i++){
+				
+				wurfel1 = (int)(Math.random() * 10) + 1;
+				wurfel2 = (int)(Math.random() * 10) + 1;
+				
+				if((wurfel1 == 1) && (wurfel2 == 1))
+				{
+					strInputWurf[i].setBackground(Color.red);
+					strInputWurf[i].setOpaque(true);
+				}
+				else if(((wurfel1 == 1) && (wurfel2 == 2)) || ((wurfel1 == 2) && (wurfel2 == 1)))
+				{
+					strInputWurf[i].setBackground(Color.yellow);
+					strInputWurf[i].setOpaque(true);
+				}
+				else if(((wurfel1 == 9) && (wurfel2 == 10)) || ((wurfel1 == 10) && (wurfel2 == 9)))
+				{
+					strInputWurf[i].setBackground(Color.cyan);
+					strInputWurf[i].setOpaque(true);
+				}
+				else if((wurfel1 == 10) && (wurfel2 == 10))
+				{
+					strInputWurf[i].setBackground(Color.green);
+					strInputWurf[i].setOpaque(true);
+				}
+				else
+				{
+					strInputWurf[i].setOpaque(false);
+				
+				}
+				
+				if(strInputZustand[i].getText().equals("Angeschlagen"))
+				{
+					Zustand = 0;
+				}
+				else if(strInputZustand[i].getText().equals("Verletzt"))
+				{
+					Zustand = -2;
+				}
+				else if(strInputZustand[i].getText().equals("Verwundet"))
+				{
+					Zustand = -4;
+				}
+				else if(strInputZustand[i].getText().equals("Schwer verwundet"))
+				{
+					Zustand = -6;
+				}
+				stringer = strInputAngriff[i].getText();
+				Zwischen = Integer.parseInt(stringer);
+				Ergebnis = wurfel1+wurfel2+Zwischen+Zustand;
+				strInputWurf[i].setText(Integer.toString(Ergebnis));
+			}}
+		});
+		btnAngriff.setBounds(885, 69, 89, 23);
+		frame.getContentPane().add(btnAngriff);
+		
+		JButton btnSchaden = new JButton("Schaden");
+		btnSchaden.setToolTipText("<html>Würfelt den angegebenden Waffenschaden aus.<br> "
+				+ "Ein Malus kann nicht verwendet werden.<br> "
+				+ "Die Angabe erfolgt wie folgt: Anzahl der Würfel(n)Würfelart(w10 oder w5)+Bonus<br> "
+				+ "BSP:2w10+4</html>");
+		btnSchaden.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg2) {
+				int i,nwurfel,wurfel,bonus1,bonus2,schaden,lange;
+				String stringer;
+				
+				
+								
+				for(i=0;i<22;i++){
+					schaden=0;
+					stringer = strInputSchaden[i].getText();
+					wurfel = stringer.charAt(2)-'0';
+					lange = stringer.length();
+					nwurfel = stringer.charAt(0)-'0';
+				
+					if (lange<=4){
+						schaden=0;
+					}
+					else if(lange<=5)
+					{
+						bonus1 = stringer.charAt(4)-'0';
+						schaden = bonus1;
+					}else if((lange==6 && stringer.charAt(2)==53)){	//53 = Wert von 5
+						bonus1 = stringer.charAt(lange-2)-'0';
+						bonus2 = stringer.charAt(lange-1)-'0';
+						schaden = bonus1*10+bonus2;
+					}else if(lange==6){
+						bonus1 = stringer.charAt(lange-1)-'0';
+						schaden = bonus1;
+					}else if(lange==7){
+						bonus1 = stringer.charAt(lange-2)-'0';
+						bonus2 = stringer.charAt(lange-1)-'0';
+						schaden = bonus1*10+bonus2;
+				}
+				if(wurfel==5){
+					wurfel=5;
+				}else{
+					wurfel=10;
+				}
+				for(nwurfel = stringer.charAt(0)-'0';nwurfel>0;nwurfel--){
+					schaden = schaden+(int)(Math.random() * wurfel) + 1;
+				}
+		
+					
+				strInputWurf[i].setText(Integer.toString(schaden));
+			}}
+		});
+		btnSchaden.setBounds(885, 103, 89, 23);
+		frame.getContentPane().add(btnSchaden);
+		
+		JButton btnScSchaden = new JButton("SC Schaden");
+		btnScSchaden.setToolTipText("<html>Verrechnet automatisch den eingegebenden Schaden.<br>"
+				+ "Lebenspunkte aktuell-Schaden+RS<br>"
+				+ "Der minimale Schaden beträgt 0.<br>"
+				+ "Der Verwundungsgrad wird automatisch mit eingerechnet.<br>  "
+				+ "Der Würfelwurf wird aktualisiert bei neuem Verwundungsgrad.</html>");
+		btnScSchaden.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg3) {
+				int i,LP,LPa,DMG,Wurf;
+				String Zustand1,Zustand2;
+								
+				for(i=0;i<22;i++){
+					DMG = Integer.parseInt(strInputSCDMG[i].getText())-Integer.parseInt(strInputRS[i].getText());
+					LPa = Integer.parseInt(strInputLPa[i].getText());
+					LP = Integer.parseInt(strInputLP[i].getText());
+					Wurf = Integer.parseInt(strInputWurf[i].getText());
+					Zustand1 =strInputZustand[i].getText();
+					Zustand2 ="Angeschlagen";
+					
+					if(DMG<1)
+					{
+						DMG = 0;
+					}
+					
+					LPa=LPa-DMG;
+					
+					if(LPa>=(LP/6*5))
+					{
+						Zustand2="Angeschlagen";
+					}
+					else if(LPa>=(LP/6*4))
+					{
+						Zustand2="Verletzt";
+					}
+					else if(LPa>=(LP/6*3))
+					{
+						Zustand2="Verwundet";
+					}
+					else if(LPa>=(LP/6*2))
+					{
+						Zustand2="Schwer verwundet";
+					}
+					else if(LPa>=(LP/6))
+					{
+						Zustand2="Außer Gefecht";
+					}
+					else if(LPa<(LP/6) && LPa>=0)
+					{
+						Zustand2="Koma";
+					}
+					else if(LPa<=0)
+					{
+						Zustand2="Tod";
+					}
+				
+					if(Zustand1.equals(Zustand2))
+					{
+						
+					}
+					else if((Zustand1.equals("Angeschlagen")) && (Zustand2.equals("Verletzt")))
+					{
+						Wurf=Wurf-2;
+					}
+					else if((Zustand1.equals("Angeschlagen")) && (Zustand2.equals("Verwundet")))
+					{
+						Wurf=Wurf-4;
+					}
+					else if((Zustand1.equals("Angeschlagen")) && (Zustand2.equals("Schwer verwundet")))
+					{
+						Wurf=Wurf-6;
+					}
+					else if((Zustand1.equals("Verletzt")) && (Zustand2.equals("Verwundet")))
+					{
+						Wurf=Wurf-2;
+					}
+					else if((Zustand1.equals("Verletzt")) && (Zustand2.equals("Schwer verwundet")))
+					{
+						Wurf=Wurf-4;
+					}
+					else if((Zustand1.equals("Verwundet")) && (Zustand2.equals("Schwer verwundet")))
+					{
+						Wurf=Wurf-2;
+					}
+					
+				strInputWurf[i].setText(Integer.toString(Wurf));
+				strInputZustand[i].setText(Zustand2);
+				strInputLPa[i].setText(Integer.toString(LPa));
+				strInputSCDMG[i].setText("0");
+			}}
+		});
+		btnScSchaden.setBounds(885, 137, 89, 23);
+		frame.getContentPane().add(btnScSchaden);
+		
+		JButton btnReset = new JButton("Reset");
+		btnReset.setToolTipText("<html>Setzt die aktuellen Lebenspunkte auf <br>"
+				+ "die angegebenen Lebenspunkte.<br>"
+				+ "Die Würfel werden zurückgesetzt.</html>");
+		btnReset.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg4) {
+				int i;
+							
+				for(i=0;i<22;i++){			
+							
+					strInputWurf[i].setText("0");
+					strInputZustand[i].setText("Angeschlagen");
+					strInputLPa[i].setText(strInputLP[i].getText());
+					strInputSCDMG[i].setText("0");
+					strInputWurf[i].setOpaque(false);
+				}
+			}
+		});
+		btnReset.setBounds(885, 171, 89, 23);
+		frame.getContentPane().add(btnReset);			
+		
+		JButton btnUnsichtbar = new JButton("Un/Sichtbar");
+		btnUnsichtbar.setToolTipText("<html>Lässt die Zeilen <br>"
+				+ "sichtbar bzw. unsichtbar werden</html>");		
+		btnUnsichtbar.setBounds(885, 205, 89, 23);
+		btnUnsichtbar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg5) {
+				int i;
+					
+		
+				for(i=0;i<22;i++){
+					
+				
+			if(checkBoxes[i].isSelected()){
+		
+			
+				strInputName[i].setVisible(false);
+						
+				strInputVW[i].setVisible(false);
+			
+				strInputSR[i].setVisible(false);
+			
+				strInputGW[i].setVisible(false);
+			
+				strInputLP[i].setVisible(false);
+			
+				strInputRS[i].setVisible(false);
+			
+				strInputInitiative[i].setVisible(false);
+			
+				strInputAngriff[i].setVisible(false);
+			
+				strInputSchaden[i].setVisible(false);
+			
+				strInputSCDMG[i].setVisible(false);
+			
+				strInputLPa[i].setVisible(false);
+	
+				strInputZustand[i].setVisible(false);
+	
+				strInputWurf[i].setVisible(false);
+		
+			}else{
+				
+				strInputName[i].setVisible(true);
+				
+				strInputVW[i].setVisible(true);
+			
+				strInputSR[i].setVisible(true);
+			
+				strInputGW[i].setVisible(true);
+			
+				strInputLP[i].setVisible(true);
+			
+				strInputRS[i].setVisible(true);
+			
+				strInputInitiative[i].setVisible(true);
+			
+				strInputAngriff[i].setVisible(true);
+			
+				strInputSchaden[i].setVisible(true);
+			
+				strInputSCDMG[i].setVisible(true);
+			
+				strInputLPa[i].setVisible(true);
+	
+				strInputZustand[i].setVisible(true);
+	
+				strInputWurf[i].setVisible(true);
+			}
+				}
+			}
+		});
+		frame.getContentPane().add(btnUnsichtbar);
+	
+		JLabel lblCarnifix = new JLabel("Made by Carnifix");
+		lblCarnifix.setBounds(0, 0, 984, 762);
+		frame.getContentPane().add(lblCarnifix);
+		
+
+		
+	}
+}
